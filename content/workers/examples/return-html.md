@@ -29,3 +29,10 @@ addEventListener('fetch', event => {
   return event.respondWith(handleRequest(event.request));
 });
 ```
+The worker defines an `html` variable that contains the HTML content to be returned, and an `async` function named `handleRequest()` that returns a Response object with the HTML content and the appropriate `content-type` header.
+
+The worker also uses the `addEventListener()` method to attach an event listener for the `fetch` event.\
+This event listener calls the `handleRequest()` function and uses the `respondWith()` method to return the response to the client.
+
+This worker is a very basic example, but it shows how a Cloudflare Worker can be used to handle HTTP requests and return custom responses.\
+In a more complex scenario, the worker could perform additional tasks, such as modifying the request or response, fetching data from an external API, or implementing custom logic.
